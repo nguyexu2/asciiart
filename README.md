@@ -11,3 +11,6 @@ The idea of this project is to load images, translate them into ASCII ART images
 2. Play [lofi hip hop radio](https://www.youtube.com/watch?v=5qap5aO4i9A)
 3. [???](https://www.youtube.com/watch?v=ZXsQAXx_ao0)
 4. Profit
+
+#simple command
+run --image test-image.jpg --output-file ../outputs/output.txt

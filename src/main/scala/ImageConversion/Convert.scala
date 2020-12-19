@@ -1,0 +1,5 @@
+package ImageConversion
+
+trait Convert {
+
+}
