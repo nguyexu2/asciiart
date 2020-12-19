@@ -1,6 +1,6 @@
 package ImageFilter
 import Image.Image
 
-class FlipFilter extends Filter{
+class ScaleFilter() extends Filter {
   override def filter(img: Image): Image = ???
 }
