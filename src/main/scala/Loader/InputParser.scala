@@ -41,7 +41,6 @@ class InputParser(val arg: Array[String]) {
   private def ParseFlip(): Unit = {
     assert(curToken == "--flip")
     consumeToken()
-    println(curToken)
     curToken match {
       case "x" => params = params.appended(new FlipX)
       case "y" => params = params.appended(new FlipY)
@@ -69,7 +68,7 @@ class InputParser(val arg: Array[String]) {
     assert(curToken == "--scale")
     consumeToken()
 
-    params = params.appended(new Scale(curToken.toInt))
+    params = params.appended(new Scale(curToken.toDouble))
     consumeToken()
   }
 
