@@ -3,11 +3,11 @@ package Loader.ImageLoaders
 import java.awt.Color
 import java.io.File
 
-import Image.{GridImage, Image, Pixel, PixelGrid, RGBPixel}
+import Image.{Image, PixelGrid, RGBPixel}
 import javax.imageio.ImageIO
 
 class FileImageLoader(val path: File) extends ImageLoader {
-  override def getImage(): Image = {
+  override def getImage: Image[RGBPixel]= {
     val buffer = ImageIO.read(path)
 
     val height = buffer.getHeight
@@ -18,6 +18,6 @@ class FileImageLoader(val path: File) extends ImageLoader {
         pixelArr(y)(x) = new RGBPixel(new Color(buffer.getRGB(x, y)))
     }
 
-    new GridImage(new PixelGrid(pixelArr))
+    new Image[RGBPixel](pixelArr)
   }
 }
