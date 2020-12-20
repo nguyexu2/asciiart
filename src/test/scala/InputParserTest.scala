@@ -1,5 +1,6 @@
 import org.scalatest.FunSuite
-import Loader.{Brightness, FlipX, FlipY, InputLocation, InputParser, Invert, OutputConsole, OutputLocation, Rotate, Scale}
+import Loader.InputParser
+import Parameters.{Brightness, FlipX, FlipY, InputLocation, Invert, OutputConsole, OutputLocation, Rotate, Scale}
 
 class InputParserTest extends FunSuite {
   test("empty") {

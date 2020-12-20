@@ -1,4 +1,5 @@
-import Loader.{FlipX, InputLocation, Invert, LoaderFactory, OutputConsole}
+import Loader.LoaderFactory
+import Parameters.{FlipX, InputLocation, Invert, OutputConsole}
 import org.scalatest.FunSuite
 
 class LoaderTest extends FunSuite {

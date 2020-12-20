@@ -1,5 +1,7 @@
 package Loader
 
+import Parameters.{Brightness, FlipX, FlipY, InputLocation, Invert, OutputConsole, OutputLocation, Parameter, Rotate, Scale}
+
 import scala.collection.mutable.ListBuffer
 
 class InputParser(val arg: Array[String]) {

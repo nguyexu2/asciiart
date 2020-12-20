@@ -1,7 +1,9 @@
 package Loader
 
 import java.io.File
+
 import Loader.ImageLoaders.FileImageLoader
+import Parameters.{InputLocation, Parameter}
 
 class LoaderFactory(var args: Seq[Parameter]) {
   final val supportedFormats = Array("png", "jpg")
