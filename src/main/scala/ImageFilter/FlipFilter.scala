@@ -1,6 +1,15 @@
 package ImageFilter
-import Image.Image
 
-class FlipFilter extends Filter{
-  override def filter(arr:Array[Array[_]]) :Array[Array[_]]= ???
+import scala.reflect.ClassTag
+
+abstract class FlipFilter extends Filter {}
+
+class FlipXFilter extends FlipFilter {
+  override def filter[T:ClassTag](arr: Array[Array[T]]): Array[Array[T]] =
+    arr.map(_.reverse)
+}
+
+class FlipYFilter extends FlipFilter {
+  override def filter[T:ClassTag](arr: Array[Array[T]]): Array[Array[T]] =
+    arr.map(_.clone()).reverse
 }
