@@ -1,12 +1,10 @@
-package Main
-
 import Loader.ImageLoaders.ImageLoader
 import Loader.{InputParser, LoaderFactory}
 
 object Main extends App {
   val paramList = new InputParser(args).Parse()
 
-  val loader :ImageLoader = new LoaderFactory(paramList).get()
+  val loader :ImageLoader = LoaderFactory.get(paramList)
   val image = loader.getImage()
   //convert to ascii
   //create filter creator

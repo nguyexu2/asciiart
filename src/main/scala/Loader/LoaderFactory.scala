@@ -5,10 +5,10 @@ import java.io.File
 import Loader.ImageLoaders.FileImageLoader
 import Parameters.{InputLocation, Parameter}
 
-class LoaderFactory(var args: Seq[Parameter]) {
+object LoaderFactory {
   final val supportedFormats = Array("png", "jpg")
 
-  def get() : FileImageLoader = {
+  def get(args: Seq[Parameter]) : FileImageLoader = {
     for (param <- args) {
       param match {
         case x: InputLocation =>

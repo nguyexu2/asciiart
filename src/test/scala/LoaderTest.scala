@@ -5,16 +5,14 @@ import org.scalatest.FunSuite
 class LoaderTest extends FunSuite {
   test("empty"){
     val list = List()
-    val factory = new LoaderFactory(list)
-    assertThrows[IllegalArgumentException](factory.get())
+    assertThrows[IllegalArgumentException](LoaderFactory.get(list))
   }
 
   test("no input available"){
     val list = List(
       new FlipX, new Invert, new OutputConsole
     )
-    val factory = new LoaderFactory(list)
-    assertThrows[IllegalArgumentException](factory.get())
+    assertThrows[IllegalArgumentException](LoaderFactory.get(list))
   }
 
   test("normal input"){
@@ -22,8 +20,7 @@ class LoaderTest extends FunSuite {
       new InputLocation("sad_frog.jpg"),
       new FlipX, new Invert, new OutputConsole
     )
-    val factory = new LoaderFactory(list)
-    factory.get()
+    LoaderFactory.get(list)
   }
 
   test("multiple inputs"){
@@ -32,7 +29,6 @@ class LoaderTest extends FunSuite {
       new InputLocation("padoru.png"),
       new FlipX, new Invert, new OutputConsole
     )
-    val factory = new LoaderFactory(list)
-    factory.get()
+    LoaderFactory.get(list)
   }
 }
