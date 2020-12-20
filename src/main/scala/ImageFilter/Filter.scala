@@ -3,5 +3,5 @@ package ImageFilter
 import Image.Image
 
 trait Filter {
-  def filter(img: Image) :Image
+  def filter(arr:Array[Array[_]]) :Array[Array[_]]
 }
