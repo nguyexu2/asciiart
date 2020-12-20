@@ -1,9 +1,10 @@
 package ImageFilter
 
-import java.awt.Color
 
-import Image.Image
+import java.util
+
+import scala.reflect.ClassTag
 
 class FilterList extends Filter {
-  override def filter(arr:Array[Array[_]]) :Array[Array[_]] = ???
+  override def filter[T:ClassTag](arr:Array[Array[T]]) :Array[Array[T]] = ???
 }

@@ -1,7 +1,7 @@
 package ImageFilter
 
-import Image.Image
+import scala.reflect.ClassTag
 
 trait Filter {
-  def filter(arr:Array[Array[_]]) :Array[Array[_]]
+  def filter[T:ClassTag](arr:Array[Array[T]]) :Array[Array[T]]
 }

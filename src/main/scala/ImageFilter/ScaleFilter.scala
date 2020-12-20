@@ -1,6 +1,11 @@
 package ImageFilter
 import Image.Image
 
-class ScaleFilter() extends Filter {
-  override def filter(arr:Array[Array[_]]) :Array[Array[_]] = ???
+import scala.reflect.ClassTag
+
+class ScaleFilter(value:Double) extends Filter {
+  override def filter[T:ClassTag](arr:Array[Array[T]]) :Array[Array[T]] = {
+
+    arr
+  }
 }
