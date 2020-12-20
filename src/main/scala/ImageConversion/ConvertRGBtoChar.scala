@@ -3,9 +3,12 @@ package ImageConversion
 import Image.{CharPixel, RGBPixel}
 
 class ConvertRGBtoChar extends Convert {
-  private final val grayScaleTable = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
+  private final val grayScaleTable = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
 
-  private def ConvertToChar(pixel: RGBPixel):CharPixel = {
-    val gray = (0.3 * Red) + (0.59 * Green) + (0.11 * Blue))
+  def ConvertToChar(pixel: RGBPixel):CharPixel = {
+    val gray = (0.3 * pixel.red) + (0.59 * pixel.green) + (0.11 * pixel.blue)
+    val index:Int = (gray / grayScaleTable.length).toInt
+    val charRepresentation = grayScaleTable(index)
+    return new CharPixel(charRepresentation)
   }
 }
