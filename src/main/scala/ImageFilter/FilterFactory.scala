@@ -1,0 +1,5 @@
+package ImageFilter
+
+object FilterFactory  {
+
+}
