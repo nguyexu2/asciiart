@@ -13,12 +13,11 @@ class LoaderFactory(var args: Seq[Parameter]) {
           val format = x.path.substring(x.path.lastIndexOf('.') + 1)
           if(! supportedFormats.contains(format))
             throw new IllegalArgumentException(s"file of $format format not supported")
-
           return new FileImageLoader(new File(x.path))
+        case _ =>
       }
     }
 
     throw new IllegalArgumentException("missing input")
   }
-
 }
