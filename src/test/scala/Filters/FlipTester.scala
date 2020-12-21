@@ -1,3 +1,5 @@
+package Filters
+
 import ImageFilter.{FlipXFilter, FlipYFilter}
 import org.scalatest.FunSuite
 

@@ -1,3 +1,5 @@
+package Filters
+
 import ImageFilter.RotateFilter
 import org.scalatest.FunSuite
 
@@ -47,6 +49,19 @@ class RotateTest extends FunSuite {
     assert(res.length == 2)
     assert(res(0).sameElements(Array(1, 2, 3)))
     assert(res(1).sameElements(Array(4, 5, 6)))
+  }
+
+  test("immutability test")
+  {
+    val rotator = new RotateFilter(180)
+    val input = Array(Array(1, 2, 3), Array(4, 5, 6))
+    val res = rotator.filter(input)
+
+    input(0)(0) = 485151
+
+    assert(res.length == 2)
+    assert(res(0).sameElements(Array(6, 5, 4)))
+    assert(res(1).sameElements(Array(3, 2, 1)))
   }
 
   test("not supported angle"){
