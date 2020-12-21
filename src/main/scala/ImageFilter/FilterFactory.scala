@@ -3,7 +3,7 @@ package ImageFilter
 
 import Image.CharPixel
 import ImageFilter.ArrayFilters.{ChangeBrightnessFilter, FlipXFilter, FlipYFilter, InvertFilter, RotateFilter, ScaleFilter}
-import Parameters.{Brightness, FlipX, FlipY, Invert, Parameter, Rotate, Scale}
+import Parameters.{Brightness, FilterParam, FlipX, FlipY, Invert, Parameter, Rotate, Scale}
 
 object FilterFactory {
   def get(seq: Seq[Parameter]): Filter = {
@@ -21,10 +21,11 @@ object FilterFactory {
           (l: Seq[CharPixel]) => l.head
           //TODO
         ))
-        case x:Brightness => ret = ret.appended(new ChangeBrightnessFilter(
+        case x: Brightness => ret = ret.appended(new ChangeBrightnessFilter(
           //TODO
-          (e:CharPixel) => e
+          (e: CharPixel) => e
         ))
+        case _: FilterParam => throw new IllegalArgumentException("missing implementation for filter")
         case _ =>
       }
 
