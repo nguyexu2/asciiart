@@ -1,4 +1,4 @@
-package Filters
+package ImageFilter
 
 import ImageFilter.ArrayFilters.{ScaleDownFilter, ScaleUpFilter}
 import org.scalatest.FunSuite

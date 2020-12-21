@@ -1,4 +1,4 @@
-package Filters
+package ImageFilter
 
 import ImageFilter.ArrayFilters.ChangeBrightnessFilter
 import org.scalatest.FunSuite

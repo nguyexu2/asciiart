@@ -1,4 +1,4 @@
-package Filters
+package ImageFilter
 
 import ImageFilter.ArrayFilters.RotateFilter
 import org.scalatest.FunSuite

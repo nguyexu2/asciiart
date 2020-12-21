@@ -1,4 +1,4 @@
-package Conversion
+package ImageConversion
 
 import Image.{Image, Pixel}
 import ImageConversion.ConvertImage

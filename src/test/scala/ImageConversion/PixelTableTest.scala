@@ -1,4 +1,4 @@
-package Conversion
+package ImageConversion
 
 import ImageConversion.PixelUtil.ConvertRGBtoChar
 import ImageConversion.Table.BourkeTable

@@ -1,4 +1,4 @@
-package Conversion
+package ImageConversion
 
 import org.scalatest.FunSuite
 

@@ -1,4 +1,4 @@
-package Conversion
+package ImageConversion
 
 import ImageConversion.PixelUtil._
 import ImageConversion.Table.ConversionTable

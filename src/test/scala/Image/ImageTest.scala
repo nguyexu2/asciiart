@@ -1,4 +1,4 @@
-package ImageTest
+package Image
 
 import Image.{Image, Pixel}
 import org.scalatest.FunSuite
