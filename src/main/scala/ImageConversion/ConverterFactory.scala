@@ -1,8 +1,8 @@
 package ImageConversion
 
 import Image.{CharPixel, Image, RGBPixel}
-import ImageConversion.Table.{BourkeTable, ConvertRGBtoChar}
-import ImageConversion.Table.PixelUtil.Inverter
+import ImageConversion.Table.BourkeTable
+import ImageConversion.PixelUtil.{ChangeBrightness, ConvertRGBtoChar, Inverter}
 
 object ConverterFactory {
   def RGBImageToCharImage: Image[RGBPixel] => Image[CharPixel] = {
@@ -18,5 +18,10 @@ object ConverterFactory {
   def CharInverter: CharPixel => CharPixel = {
     val inverter = new Inverter(new BourkeTable)
     (a:CharPixel) => new CharPixel(inverter.apply(a.char))
+  }
+
+  def ChangeBrightness(value: Int): CharPixel => CharPixel = {
+    val util = new ChangeBrightness(new BourkeTable, value)
+    (a:CharPixel) => new CharPixel(util.apply(a.char))
   }
 }
