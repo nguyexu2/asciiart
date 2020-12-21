@@ -2,8 +2,6 @@ package UI
 
 import Parameters._
 
-import scala.collection.mutable.ListBuffer
-
 class InputParser(val arg: Array[String]) {
 
   /**
