@@ -2,7 +2,7 @@ package ImageConversion
 
 import Image.{CharPixel, Image, RGBPixel}
 import ImageConversion.Table.BourkeTable
-import ImageConversion.PixelUtil.{ChangeBrightness, ConvertRGBtoChar, Inverter}
+import ImageConversion.PixelUtil.{AverageCalc, ChangeBrightness, ConvertRGBtoChar, Inverter}
 
 object ConverterFactory {
   def RGBImageToCharImage: Image[RGBPixel] => Image[CharPixel] = {
@@ -23,5 +23,10 @@ object ConverterFactory {
   def ChangeBrightness(value: Int): CharPixel => CharPixel = {
     val util = new ChangeBrightness(new BourkeTable, value)
     (a:CharPixel) => new CharPixel(util.apply(a.char))
+  }
+
+  def Average: Seq[CharPixel] => CharPixel = {
+    val util = new AverageCalc(new BourkeTable)
+    (seq: Seq[CharPixel]) => new CharPixel(util.apply(seq.map(x => x.char)))
   }
 }
