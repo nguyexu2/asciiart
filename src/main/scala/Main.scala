@@ -15,11 +15,6 @@ object Main extends App {
     sys.exit(1)
   }
 
-  val saverFunc = SaverFactory.get(paramList)
-  if (saverFunc.isEmpty) {
-    println("couldn't fetch output param, try to use --output-console")
-    sys.exit(1)
-  }
 
   val image = loader.get.getImage
   val newImage = ConverterFactory.RGBImageToCharImage(image)
@@ -27,5 +22,6 @@ object Main extends App {
   val filter = FilterFactory.get(paramList)
 
   val newFilteredImage = new Image(filter.filter(newImage.getGrid))
-  saverFunc.get(newFilteredImage)
+  val saverFunc = SaverFactory.get(paramList)
+  saverFunc(newFilteredImage)
 }
