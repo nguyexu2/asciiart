@@ -14,7 +14,7 @@ class InputParser(val arg: Array[String]) {
   @throws [IllegalArgumentException]
   def Parse(): Seq[Parameter] = {
     i = 0
-    params = new ListBuffer[Parameter]()
+    params = List[Parameter]()
     while (!isEnd) {
       curToken match {
         case "--flip" => ParseFlip()
@@ -29,11 +29,11 @@ class InputParser(val arg: Array[String]) {
       }
     }
 
-    params.toList
+    params
   }
 
   private var i = 0
-  private var params = new ListBuffer[Parameter]()
+  private var params = List[Parameter]()
 
   private def isEnd = i >= arg.length
 
