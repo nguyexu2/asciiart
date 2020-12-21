@@ -1,7 +1,7 @@
 package Saver
 
 import Image.Image
-import Parameters.{OutputConsole, OutputLocation, OutputParam, Parameter}
+import Parameters._
 
 object SaverFactory {
   def get(seq: Seq[Parameter]): Image[_] => Unit = {
