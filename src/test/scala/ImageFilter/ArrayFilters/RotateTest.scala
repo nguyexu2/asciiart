@@ -41,7 +41,7 @@ class RotateTest extends FunSuite {
     assert(res(2).sameElements(Array(6, 3)))
   }
 
-  test("over 720 rotation"){
+  test("over 360 rotation"){
     val rotator = new RotateFilter(720)
     val input = Array(Array(1, 2, 3), Array(4, 5, 6))
     val res = rotator.filter(input)
