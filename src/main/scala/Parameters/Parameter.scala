@@ -1,25 +1,31 @@
 package Parameters
 
-class ParamList(params : Seq[Parameter]) {}
+class ParamList(params: Seq[Parameter]) {}
 
 abstract class Parameter {}
 
-class FlipX() extends Parameter {}
+abstract class InputParam extends Parameter {}
 
-class FlipY() extends Parameter {}
+abstract class OutputParam extends Parameter {}
 
-class Invert() extends Parameter {}
+abstract class FilterParam extends Parameter {}
 
-class Rotate(val degree: Int) extends Parameter {}
+class FlipX() extends FilterParam {}
 
-class Scale(val value: Double) extends Parameter {}
+class FlipY() extends FilterParam {}
 
-class Brightness(val value: Int) extends Parameter {}
+class Invert() extends FilterParam {}
 
-class InputLocation(val path: String) extends Parameter {}
+class Rotate(val degree: Int) extends FilterParam {}
 
-class OutputLocation(val path: String) extends Parameter {}
+class Scale(val value: Double) extends FilterParam {}
 
-class OutputConsole extends Parameter {}
+class Brightness(val value: Int) extends FilterParam {}
+
+class InputLocation(val path: String) extends InputParam {}
+
+class OutputLocation(val path: String) extends OutputParam {}
+
+class OutputConsole extends OutputParam {}
 
 
