@@ -8,6 +8,12 @@ import Parameters.{InputLocation, InputParam, Parameter}
 object LoaderFactory {
   final val supportedFormats = Array("png", "jpg")
 
+  /**
+   * @param args: sequence of parameters, to see which are supported, check the Parameters package
+   * @throws IllegalArgumentException: when format is not supported
+   * @return class that can create an image, none if no inputParam was given
+   */
+  @throws [IllegalArgumentException]
   def get(args: Seq[Parameter]): Option[FileImageLoader] = {
     for (param <- args) {
       param match {

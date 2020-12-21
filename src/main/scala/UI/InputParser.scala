@@ -35,6 +35,9 @@ class InputParser(val arg: Array[String]) {
 
   private def isEnd = i >= arg.length
 
+  /**
+   * @return token that hasnt been handled yet, "" if there is no token left
+   */
   private def curToken =
     if (!isEnd) arg(i)
     else ""
