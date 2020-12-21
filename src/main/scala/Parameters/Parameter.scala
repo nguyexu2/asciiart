@@ -2,7 +2,7 @@ package Parameters
 
 class ParamList(params : Seq[Parameter]) {}
 
-abstract class Parameter() {}
+abstract class Parameter {}
 
 class FlipX() extends Parameter {}
 
