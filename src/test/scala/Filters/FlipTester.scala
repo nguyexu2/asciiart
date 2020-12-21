@@ -1,6 +1,6 @@
 package Filters
 
-import ImageFilter.{FlipXFilter, FlipYFilter}
+import ImageFilter.ArrayFilters.{FlipXFilter, FlipYFilter}
 import org.scalatest.FunSuite
 
 class FlipTester extends FunSuite {

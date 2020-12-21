@@ -1,6 +1,6 @@
 package Filters
 
-import ImageFilter.InvertFilter
+import ImageFilter.ArrayFilters.InvertFilter
 import org.scalatest.FunSuite
 
 class InvertFilterTest extends FunSuite{

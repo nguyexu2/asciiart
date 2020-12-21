@@ -1,6 +1,6 @@
 package Filters
 
-import ImageFilter.RotateFilter
+import ImageFilter.ArrayFilters.RotateFilter
 import org.scalatest.FunSuite
 
 class RotateTest extends FunSuite {
