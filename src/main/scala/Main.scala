@@ -1,18 +1,22 @@
-import Loader.ImageLoaders.ImageLoader
-import Loader.{InputParser, LoaderFactory}
+import Image.Image
+import ImageConversion.ConverterFactory
+import ImageFilter.ArrayFilters.RotateFilter
+import ImageFilter.FilterFactory
+import Loader.LoaderFactory
+import Saver.ConsolePrint
+import UI.InputParser
 
 object Main extends App {
   val paramList = new InputParser(args).Parse()
 
-  val loader :ImageLoader = LoaderFactory.get(paramList)
-  val image = loader.getImage()
-  //convert to ascii
-  //create filter creator
-  //build filter depending on arguments
-  //apply filter on images
-  //create output depending on param
+  val loader = LoaderFactory.get(paramList)
+  val image = loader.getImage
+  val newImage = ConverterFactory.RGBImageToCharImage(image)
+
+  val filter = FilterFactory.get(paramList)
+
+  val newFilteredImage = new Image(filter.filter(newImage.getGrid))
+
   //save image
-
-
-  println("Hello there")
+  ConsolePrint.printToConsole(newFilteredImage)
 }
