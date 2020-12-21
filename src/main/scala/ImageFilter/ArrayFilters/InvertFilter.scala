@@ -1,7 +1,5 @@
 package ImageFilter.ArrayFilters
 
-import ImageFilter.Filter
-
 import scala.reflect.ClassTag
 
 class InvertFilter[A](invert: A => A) extends Filter{

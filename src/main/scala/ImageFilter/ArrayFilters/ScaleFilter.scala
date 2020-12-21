@@ -1,7 +1,5 @@
 package ImageFilter.ArrayFilters
 
-import ImageFilter.Filter
-
 import scala.reflect.ClassTag
 
 abstract class ScaleFilter extends Filter {}
@@ -35,7 +33,7 @@ class ScaleDownFilter[A](value: Double, average: Seq[A] => A) extends ScaleFilte
     val w = arr(0).length / newWidth
 
     for (i <- 0 until newHeight; j <- 0 until newWidth) {
-      val list :Seq[A] = for(ii <- i until i+h; jj <- j until j+w) yield arr(ii)(jj).asInstanceOf[A]
+      val list :Seq[A] = for(ii <- i*h until (i+1)*h; jj <- j*h until (j+1)*h) yield arr(ii)(jj).asInstanceOf[A]
 
       ret(i)(j) = average(list).asInstanceOf[T]
 

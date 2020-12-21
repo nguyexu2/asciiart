@@ -3,7 +3,7 @@ package ImageFilter
 
 import Image.CharPixel
 import ImageConversion.ConverterFactory
-import ImageFilter.ArrayFilters.{ChangeBrightnessFilter, FlipXFilter, FlipYFilter, InvertFilter, RotateFilter, ScaleDownFilter, ScaleFilter, ScaleUpFilter}
+import ImageFilter.ArrayFilters.{ChangeBrightnessFilter, Filter, FilterList, FlipXFilter, FlipYFilter, InvertFilter, RotateFilter, ScaleDownFilter, ScaleFilter, ScaleUpFilter}
 import Parameters.{Brightness, FilterParam, FlipX, FlipY, Invert, Parameter, Rotate, Scale}
 
 object FilterFactory {

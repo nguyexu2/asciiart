@@ -1,7 +1,5 @@
 package ImageFilter.ArrayFilters
 
-import ImageFilter.Filter
-
 import scala.reflect.ClassTag
 
 class RotateFilter(val degree: Int) extends Filter {
