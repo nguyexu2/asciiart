@@ -23,10 +23,11 @@ object FilterFactory {
           (l: Seq[CharPixel]) => l.head
           //TODO
         ))
-        case x: Brightness => ret = ret.appended(new ChangeBrightnessFilter(
-          //TODO
-          (e: CharPixel) => e
-        ))
+        case x: Brightness =>
+          val brightnessChanger = ConverterFactory.ChangeBrightness(x.value)
+          ret = ret.appended(new ChangeBrightnessFilter(
+            (e: CharPixel) => brightnessChanger(e)
+          ))
         case _: FilterParam => throw new IllegalArgumentException("missing implementation for filter")
         case _ =>
       }
