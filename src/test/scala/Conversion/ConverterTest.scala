@@ -1,7 +1,9 @@
+package Conversion
+
 import ImageConversion.Table.{BourkeTable, ConvertRGBtoChar}
 import org.scalatest.FunSuite
 
-class RGBToCharTest extends FunSuite {
+class ConverterTest extends FunSuite {
   test("convert white") {
     val table = new BourkeTable
     val convertor = new ConvertRGBtoChar(table)
@@ -27,4 +29,11 @@ class RGBToCharTest extends FunSuite {
     val res = convertor.ConvertToChar(255, 253, 254)
     assert(". ".contains(res))
   }
+
+  test("find Index") {
+    val table = new BourkeTable
+    assert(table.length - 1 == table.findIndex(' '))
+    assert(0 == table.findIndex('$'))
+  }
+
 }
