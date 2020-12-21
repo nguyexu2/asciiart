@@ -12,7 +12,7 @@ class ScaleUpFilter(value: Double) extends ScaleFilter{
     if(arr.length == 0 || arr(0).isEmpty)
       return arr
 
-    val width = arr.length
+    val width = arr(0).length
     if(arr.exists(row => row.length != width))
       throw new IllegalArgumentException("not all rows have the same length")
 
@@ -35,7 +35,7 @@ class ScaleDownFilter[A](value: Double, average: Seq[A] => A) extends ScaleFilte
     if(arr.length == 0 || arr(0).isEmpty)
       return arr
 
-    val width = arr.length
+    val width = arr(0).length
     if(arr.exists(row => row.length != width))
       throw new IllegalArgumentException("not all rows have the same length")
 
