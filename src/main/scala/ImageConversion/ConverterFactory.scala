@@ -9,7 +9,7 @@ object ConverterFactory {
     val table = new ConvertRGBtoChar(new BourkeTable)
 
     val convertor = new ConvertImage[RGBPixel, CharPixel](
-      (x: RGBPixel) => new CharPixel(table.ConvertToChar(x.red, x.green, x.blue))
+      (x: RGBPixel) => new CharPixel(table.convertToChar(x.red, x.green, x.blue))
     )
 
     x: Image[RGBPixel] => convertor.convert(x)
