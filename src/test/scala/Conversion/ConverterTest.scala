@@ -1,6 +1,7 @@
 package Conversion
 
-import ImageConversion.Table.{BourkeTable, ConvertRGBtoChar}
+import ImageConversion.PixelUtil.ConvertRGBtoChar
+import ImageConversion.Table.BourkeTable
 import org.scalatest.FunSuite
 
 class ConverterTest extends FunSuite {
