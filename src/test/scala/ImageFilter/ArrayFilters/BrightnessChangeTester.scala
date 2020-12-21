@@ -1,6 +1,5 @@
-package ImageFilter
+package ImageFilter.ArrayFilters
 
-import ImageFilter.ArrayFilters.ChangeBrightnessFilter
 import org.scalatest.FunSuite
 
 class BrightnessChangeTester extends FunSuite {

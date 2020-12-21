@@ -1,4 +1,4 @@
-package ImageFilter
+package ImageFilter.ArrayFilters
 
 import org.scalatest.FunSuite
 

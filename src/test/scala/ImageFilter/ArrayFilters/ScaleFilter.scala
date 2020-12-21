@@ -1,6 +1,5 @@
-package ImageFilter
+package ImageFilter.ArrayFilters
 
-import ImageFilter.ArrayFilters.{ScaleDownFilter, ScaleUpFilter}
 import org.scalatest.FunSuite
 
 class ScaleFilter extends FunSuite {
