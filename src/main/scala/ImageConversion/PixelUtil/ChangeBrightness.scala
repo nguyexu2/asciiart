@@ -17,7 +17,7 @@ class ChangeBrightness(table: ConversionTable, offset: Int) {
 
     //convert back down to char
     val newWhitePercent = newGray/255.0
-    var newIndex = (whitePercent * table.length).toInt
+    var newIndex = (newWhitePercent * table.length).toInt
     if(newIndex >= table.length )
       newIndex = table.length - 1
     table.getChar(newIndex)
