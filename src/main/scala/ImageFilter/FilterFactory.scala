@@ -2,6 +2,7 @@ package ImageFilter
 
 
 import Image.CharPixel
+import ImageConversion.ConverterFactory
 import ImageFilter.ArrayFilters.{ChangeBrightnessFilter, FlipXFilter, FlipYFilter, InvertFilter, RotateFilter, ScaleFilter}
 import Parameters.{Brightness, FilterParam, FlipX, FlipY, Invert, Parameter, Rotate, Scale}
 
@@ -12,10 +13,11 @@ object FilterFactory {
       param match {
         case _: FlipX => ret = ret.appended(new FlipXFilter)
         case _: FlipY => ret = ret.appended(new FlipYFilter)
-        case _: Invert => ret = ret.appended(new InvertFilter(
-          (e: CharPixel) => e
-          //TODO
-        ))
+        case _: Invert =>
+          val invert = ConverterFactory.CharInverter
+          ret = ret.appended(new InvertFilter(
+            (e: CharPixel) => invert(e)
+          ))
         case x: Rotate => ret = ret.appended(new RotateFilter(x.degree))
         case x: Scale => ret = ret.appended(new ScaleFilter(x.value,
           (l: Seq[CharPixel]) => l.head
