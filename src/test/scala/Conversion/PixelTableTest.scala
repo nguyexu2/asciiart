@@ -4,7 +4,7 @@ import ImageConversion.PixelUtil.ConvertRGBtoChar
 import ImageConversion.Table.BourkeTable
 import org.scalatest.FunSuite
 
-class ConverterTest extends FunSuite {
+class PixelTableTest extends FunSuite {
   test("convert white") {
     val table = new BourkeTable
     val convertor = new ConvertRGBtoChar(table)
