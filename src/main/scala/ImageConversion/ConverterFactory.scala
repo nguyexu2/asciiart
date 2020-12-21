@@ -17,6 +17,6 @@ object ConverterFactory {
 
   def CharInverter: CharPixel => CharPixel = {
     val inverter = new Inverter(new BourkeTable)
-    (a:CharPixel) => inverter.apply(a)
+    (a:CharPixel) => new CharPixel(inverter.apply(a.char))
   }
 }
